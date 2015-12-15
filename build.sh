@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build --rm -t timhaak/mariadb-alpine .
+docker build --rm -t univunix/alpine-mariadb .
