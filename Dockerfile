@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER aglezabad@gmail.com
 
-RUN groupadd -r mysql && useradd -r -g mysql mysql
+RUN addgroup -r mysql && adduser -r -g mysql mysql
 
 ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8" \
