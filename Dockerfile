@@ -1,8 +1,6 @@
 FROM alpine
 MAINTAINER aglezabad@gmail.com
 
-RUN addgroup -S mysql && adduser -system -group mysql mysql
-
 ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8" \
     LANGUAGE="en_US.UTF-8" \
