@@ -20,7 +20,7 @@ if [ ! -f /data/db/mysql/ibdata1 ]; then
     /usr/bin/mysqld_safe --defaults-file=/data/conf/my.cnf &
     sleep 10s
 
-		echo "Y\n${DB_ROOT_PASS}\nY\nY\nY\nY\n" > mysql_secure_installation
+		echo "Y\n${DB_ROOT_PASS}\nY\nY\nY\nY\n" | mysql_secure_installation
 
     echo "GRANT ALL ON *.* TO ${DB_USER}@'%' IDENTIFIED BY '${DB_PASS}' WITH GRANT OPTION;GRANT ALL ON *.* TO ${DB_USER}@'localhost' IDENTIFIED BY '${DB_PASS}' WITH GRANT OPTION; FLUSH PRIVILEGES;" | mysql -u root --password="${DB_ROOT_PASS}"
 
