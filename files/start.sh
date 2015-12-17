@@ -20,7 +20,9 @@ if [ ! -f /data/db/mysql/ibdata1 ]; then
     /usr/bin/mysqld_safe --defaults-file=/data/conf/my.cnf &
     sleep 10s
 
-		echo "Y\n${DB_ROOT_PASS}\nY\nY\nY\nY\n" | mysql_secure_installation
+		#Changed mysql_secure_installation script to running only the commands.
+		echo "UPDATE mysql.user SET Password=PASSWORD('${DB_ROOT_PASS}') WHERE User='root'; DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('loacalhost', '127.0.0.1', '::1'); DELETE FROM mysql.user WHERE User=''; DELETE FROM mysql.db WHERE db='test' OR Db='test\_%'; FLUSH PRIVILEGES;" | mysql -u root
+
 
     echo "GRANT ALL ON *.* TO ${DB_USER}@'%' IDENTIFIED BY '${DB_PASS}' WITH GRANT OPTION;GRANT ALL ON *.* TO ${DB_USER}@'localhost' IDENTIFIED BY '${DB_PASS}' WITH GRANT OPTION; FLUSH PRIVILEGES;" | mysql -u root --password="${DB_ROOT_PASS}"
 
