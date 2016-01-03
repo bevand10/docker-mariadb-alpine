@@ -1,9 +1,9 @@
-FROM alpine
+FROM alpine:edge
 MAINTAINER aglezabad@gmail.com
 
-ENV LANG="en_US.UTF-8" \
-    LC_ALL="en_US.UTF-8" \
-    LANGUAGE="en_US.UTF-8" \
+ENV LANG="en_GB.UTF-8" \
+    LC_ALL="en_GB.UTF-8" \
+    LANGUAGE="en_GB.UTF-8" \
 		DB_ROOT_PASS="toor" \
     DB_USER="admin" \
     DB_PASS="password" \
