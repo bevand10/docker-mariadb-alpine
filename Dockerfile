@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER aglezabad@gmail.com
+MAINTAINER dave.bevan@bbc.co.uk
 
 ENV LANG="en_GB.UTF-8" \
     LC_ALL="en_GB.UTF-8" \
